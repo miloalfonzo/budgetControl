@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Question from "./Components/Question";
+import Form from "./Components/Form";
 
 function App() {
+  const [budget, setBudget] = useState(0);
+  const [bleft, setBleft] = useState(0);
+  const [showQuestion, setShowQuestion] = useState(true);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Presupuesto</h1>
+      {showQuestion ? (
+        <Question
+          setBudget={setBudget}
+          setBleft={setBleft}
+          setShowQuestion={setShowQuestion}
+        />
+      ) : (
+        <div className="row">
+          <div className="">
+            <Form />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
