@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Error from "./Error";
+import PropTypes from "prop-types";
 
 function Question({ setBudget, setBleft, setShowQuestion }) {
   const [quant, setQuant] = useState(0);
@@ -45,5 +46,11 @@ function Question({ setBudget, setBleft, setShowQuestion }) {
     </div>
   );
 }
+
+Question.propTypes = {
+  setBudget: PropTypes.func.isRequired,
+  setBleft: PropTypes.func.isRequired,
+  setShowQuestion: PropTypes.func.isRequired
+};
 
 export default Question;

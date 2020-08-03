@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import Error from "./Error";
 import shortid from "shortid";
 
-function Form() {
+function Form({ setExpense, setNewexpense }) {
   const [name, setName] = useState("");
   const [quant, setQuant] = useState(0);
   const [error, setError] = useState(false);
@@ -17,7 +18,14 @@ function Form() {
     setError(false);
 
     const expense = { name, quant, id: shortid.generate() };
-    console.log(expense);
+
+    //console.log(expense);
+
+    setExpense(expense);
+    setNewexpense(true);
+
+    setName("");
+    setQuant(0);
   };
   return (
     <div className="form">
@@ -51,5 +59,10 @@ function Form() {
     </div>
   );
 }
+
+Form.propTypes = {
+  setExpense: PropTypes.func.isRequired,
+  setNewExpense: PropTypes.func.isRequired
+};
 
 export default Form;
