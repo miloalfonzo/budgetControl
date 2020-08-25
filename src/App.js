@@ -28,24 +28,28 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Presupuesto</h1>
-      {showQuestion ? (
-        <Question
-          setBudget={setBudget}
-          setBleft={setBleft}
-          setShowQuestion={setShowQuestion}
-        />
-      ) : (
-        <div className="row">
-          <div className="1">
-            <Form setExpense={setExpense} setNewexpense={setNewexpense} />
-          </div>
-          <div className="2">
-            <List expenses={expenses} />
-            <ControlBudget budget={budget} bleft={bleft} />
-          </div>
+      <div className="container">
+        <h1>Presupuesto</h1>
+        <div className="contenido-principal contenido">
+          {showQuestion ? (
+            <Question
+              setBudget={setBudget}
+              setBleft={setBleft}
+              setShowQuestion={setShowQuestion}
+            />
+          ) : (
+            <div className="row">
+              <div className="one-half column">
+                <Form setExpense={setExpense} setNewexpense={setNewexpense} />
+              </div>
+              <div className="one-half column">
+                <List expenses={expenses} />
+                <ControlBudget budget={budget} bleft={bleft} />
+              </div>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 }

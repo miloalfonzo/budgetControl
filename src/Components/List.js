@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 function List({ expenses }) {
   return (
     <div classname="app">
-      <h1>si</h1>
+      <h1>Presupuesto</h1>
       {expenses.map((expense) => (
         <Expense key={expense.id} expense={expense} />
       ))}

@@ -40,6 +40,7 @@ function Form({ setExpense, setNewexpense }) {
             type="text"
             className="expenseName"
             placeholder="Ej. Cargar la sube"
+            className="u-full-width"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -50,11 +51,16 @@ function Form({ setExpense, setNewexpense }) {
             type="number"
             className="expenseCost"
             placeholder="Ej. 250"
+            className="u-full-width"
             value={quant}
             onChange={(e) => setQuant(parseInt(e.target.value, 10))}
           />
         </div>
-        <input type="submit" className="submitExp" value="Agregar gasto" />
+        <input
+          type="submit"
+          className="button-primary u-full-width submitExp"
+          value="Agregar gasto"
+        />
       </form>
     </div>
   );

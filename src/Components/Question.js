@@ -25,23 +25,24 @@ function Question({ setBudget, setBleft, setShowQuestion }) {
   };
 
   return (
-    <div className="question">
+    <div className="question ">
       {error ? <Error msg="El presupuesto es incorrecto" /> : null}
-      <h1>Colocá tu presupuesto</h1>
 
       <form onSubmit={addBudget}>
-        <input
-          type="number"
-          className="number"
-          placeholder="Ingresá tu presupuesto"
-          onChange={defineBudget}
-        />
-
-        <input
-          type="submit"
-          classname="btn-submit"
-          value="Define tu presupuesto"
-        />
+        <div className="row ">
+          <input
+            type="number"
+            className="u-full-width"
+            placeholder="Ingresá tu presupuesto"
+            onChange={defineBudget}
+          />
+          <input
+            className="button-primary u-full-width"
+            type="submit"
+            classname="btn-submit"
+            value="Define tu presupuesto"
+          />
+        </div>
       </form>
     </div>
   );
